@@ -62,7 +62,7 @@ const observer = new IntersectionObserver(function(entries) {
 // Observe all cards and sections for animation
 document.addEventListener('DOMContentLoaded', function() {
     const animateElements = document.querySelectorAll(
-        '.problem-card, .solution-card, .perfect-for-card, .testimonial-card, .process-step'
+        '.feature-card, .build-item, .perfect-for-card, .testimonial-card, .timeline-item, .comparison-column'
     );
     
     animateElements.forEach(el => {
@@ -138,12 +138,12 @@ function animateCounter(element, target, duration = 2000) {
             clearInterval(timer);
         }
         
-        if (element.textContent.includes('%')) {
-            element.textContent = Math.floor(current) + '%';
-        } else if (element.textContent.includes('hrs')) {
-            element.textContent = Math.floor(current) + 'hrs';
-        } else if (element.textContent.includes('wks')) {
-            element.textContent = Math.floor(current) + 'wks';
+        if (element.textContent.includes('h')) {
+            element.textContent = Math.floor(current) + 'h';
+        } else if (element.textContent.includes('giorni')) {
+            element.textContent = Math.floor(current) + ' giorni';
+        } else if (element.textContent.includes('x')) {
+            element.textContent = Math.floor(current) + 'x';
         }
     }, 16);
 }
@@ -157,11 +157,10 @@ const statsObserver = new IntersectionObserver(function(entries) {
                 const text = stat.textContent;
                 if (text.includes('24')) {
                     animateCounter(stat, 24);
-                } else if (text.includes('100')) {
-                    animateCounter(stat, 100);
-                } else if (text.includes('1-2')) {
-                    // Handle the range case separately
-                    stat.textContent = '1-2wks';
+                } else if (text.includes('7')) {
+                    animateCounter(stat, 7);
+                } else if (text.includes('10')) {
+                    animateCounter(stat, 10);
                 }
             });
             statsObserver.unobserve(entry.target);
