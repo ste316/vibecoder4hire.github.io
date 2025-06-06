@@ -62,7 +62,7 @@ const observer = new IntersectionObserver(function(entries) {
 // Observe all cards and sections for animation
 document.addEventListener('DOMContentLoaded', function() {
     const animateElements = document.querySelectorAll(
-        '.feature-card, .build-item, .perfect-for-card, .testimonial-card, .timeline-item, .comparison-column'
+        '.feature-card, .build-item, .perfect-for-card, .testimonial-card, .timeline-item, .comparison-column, .faq-item, .definition-card, .elite-stat, .benefit-card, .impact-card, .process-step'
     );
     
     animateElements.forEach(el => {
@@ -215,4 +215,31 @@ style.textContent = `
         }
     }
 `;
-document.head.appendChild(style); 
+document.head.appendChild(style);
+
+// FAQ Accordion functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', function() {
+            const isActive = item.classList.contains('active');
+            
+            // Close all other FAQ items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Toggle current item
+            if (isActive) {
+                item.classList.remove('active');
+            } else {
+                item.classList.add('active');
+            }
+        });
+    });
+}); 
