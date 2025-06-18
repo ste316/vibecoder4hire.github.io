@@ -217,29 +217,44 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// FAQ Accordion functionality
+// FAQ Accordion functionality - Updated for Professional FAQ
 document.addEventListener('DOMContentLoaded', function() {
-    const faqItems = document.querySelectorAll('.faq-item');
+    // Handle both old FAQ items (if any) and new Professional FAQ items
+    const faqItems = document.querySelectorAll('.faq-item, .professional-faq-item');
     
     faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
+        const question = item.querySelector('.faq-question, .professional-faq-question');
         
-        question.addEventListener('click', function() {
-            const isActive = item.classList.contains('active');
-            
-            // Close all other FAQ items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
+        if (question) {
+            question.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const isActive = item.classList.contains('active');
+                
+                // Close ALL FAQ items first (including in different categories)
+                document.querySelectorAll('.faq-item, .professional-faq-item').forEach(otherItem => {
                     otherItem.classList.remove('active');
+                    const toggle = otherItem.querySelector('.faq-toggle');
+                    if (toggle) {
+                        toggle.textContent = '+';
+                    }
+                });
+                
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                    const currentToggle = item.querySelector('.faq-toggle');
+                    if (currentToggle) {
+                        currentToggle.textContent = '×';
+                    }
                 }
             });
-            
-            // Toggle current item
-            if (isActive) {
-                item.classList.remove('active');
-            } else {
-                item.classList.add('active');
-            }
-        });
+        }
+    });
+    
+    // Initialize all toggles to show '+'
+    document.querySelectorAll('.faq-toggle').forEach(toggle => {
+        toggle.textContent = '+';
     });
 }); 
