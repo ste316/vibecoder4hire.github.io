@@ -2958,9 +2958,6 @@ em, .font-italic {
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 25px;
     padding: 40px;
-    display: flex;
-    align-items: center;
-    gap: 30px;
     transition: all 0.3s ease;
 }
 
@@ -2968,6 +2965,237 @@ em, .font-italic {
     transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.15);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Header Styling */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+.card-header h3 {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Success Comparison Styling */
+.success-comparison {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.comparison-item {
+    text-align: center;
+    flex: 1;
+}
+
+.comparison-item .percentage {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.comparison-item.traditional .percentage {
+    color: #ff6b6b;
+}
+
+.comparison-item.ai-powered .percentage {
+    color: #4ecdc4;
+    background: linear-gradient(135deg, #4ecdc4, #44a08d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 8px rgba(78, 205, 196, 0.3));
+}
+
+.comparison-item .label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.vs-divider {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    min-width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* AI Intelligence Visual - Clean Design */
+.ai-intelligence-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin: 30px 0;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.intelligence-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.15), rgba(68, 160, 141, 0.15));
+    border: 2px solid rgba(78, 205, 196, 0.3);
+    border-radius: 20px;
+    min-width: 120px;
+    transition: all 0.3s ease;
+}
+
+.intelligence-center:hover {
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.25), rgba(68, 160, 141, 0.25));
+    border-color: rgba(78, 205, 196, 0.5);
+    transform: translateY(-2px);
+}
+
+.ai-brain-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 2px 8px rgba(78, 205, 196, 0.4));
+    margin-bottom: 5px;
+}
+
+.ai-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #4ecdc4;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Clean AI Metrics Display */
+.ai-metrics {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ai-metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    min-width: 80px;
+}
+
+.ai-metric:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    border-color: rgba(78, 205, 196, 0.4);
+}
+
+.metric-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4ecdc4;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.metric-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Tag Styling */
+.ai-advantages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.advantage-tag {
+    background: rgba(78, 205, 196, 0.2);
+    color: #4ecdc4;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(78, 205, 196, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.ai-capabilities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.capability-tag {
+    background: rgba(68, 160, 141, 0.2);
+    color: #44a08d;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(68, 160, 141, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+/* Authority Content */
+.authority-content {
+    flex: 1;
+}
+
+.authority-content h3 {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.authority-content p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.authority-content p strong {
+    color: white;
+    font-weight: 600;
 }
 
 .authority-visual {
@@ -3388,9 +3616,103 @@ em, .font-italic {
     }
     
     .market-authority-card {
+        padding: 40px 25px;
+        min-height: 500px;
+    }
+
+    /* Mobile Card Header */
+    .card-header {
         flex-direction: column;
         text-align: center;
-        padding: 30px 20px;
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    .card-icon {
+        font-size: 2rem;
+    }
+
+    .card-header h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Mobile Success Comparison */
+    .success-comparison {
+        flex-direction: column;
+        gap: 20px;
+        padding: 25px 20px;
+        margin: 35px 0;
+    }
+
+    .comparison-item {
+        padding: 15px 0;
+    }
+
+    .comparison-item .percentage {
+        font-size: 2.8rem;
+        margin-bottom: 10px;
+    }
+
+    .comparison-item .label {
+        font-size: 0.85rem;
+    }
+
+    .vs-divider {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+        margin: 10px 0;
+        align-self: center;
+    }
+
+    /* Mobile AI Intelligence Visual */
+    .ai-intelligence-visual {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .intelligence-center {
+        padding: 20px;
+        min-width: 100px;
+    }
+
+    .ai-brain-icon {
+        font-size: 2rem;
+    }
+
+    .ai-label {
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+    }
+
+    .ai-metrics {
+        gap: 15px;
+    }
+
+    .ai-metric {
+        padding: 12px 15px;
+        min-width: 70px;
+    }
+
+    .metric-number {
+        font-size: 1.3rem;
+    }
+
+    .metric-label {
+        font-size: 0.7rem;
+    }
+
+    /* Mobile Tags */
+    .ai-advantages,
+    .ai-capabilities {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .advantage-tag,
+    .capability-tag {
+        font-size: 0.8rem;
+        padding: 6px 12px;
     }
     
     .network-metrics-grid {
